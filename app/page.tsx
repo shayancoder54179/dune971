@@ -1,17 +1,17 @@
-import { HeroSection } from "@/components/hero-section"
-import { ServicesGrid } from "@/components/services-grid"
-import { MethodSection } from "@/components/method-section"
-import { AreaHighlights } from "@/components/area-highlights"
-import { FAQSection } from "@/components/faq-section"
+import { Hero } from '@/components/home/Hero';
+import { InvestorEdge } from '@/components/home/InvestorEdge';
+import { MethodSection } from '@/components/home/MethodSection';
+import { AreaHighlights } from '@/components/home/AreaHighlights';
+import { FAQSection } from '@/components/home/FAQSection';
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <ServicesGrid />
+      <Hero />
+      <InvestorEdge />
       <MethodSection />
       <AreaHighlights />
       <FAQSection />
     </>
-  )
+  );
 }

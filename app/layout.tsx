@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Playfair_Display, Montserrat, Lora } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-playfair-display",
+  variable: "--font-heading",
+  weight: ["400", "500", "600"],
 });
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-accent",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Dune 971 | Dubai Real Estate Investment Advisor & Luxury Property Management",
-  description: "Buyer-focused real estate advisory in Dubai. Expert yield analysis, discretionary management, and off-plan investment opportunities in Business Bay, Palm Jebel Ali & Dubai Islands.",
+  title: "Dune 971 | Luxury Real Estate",
+  description: "Curating exceptional real estate opportunities.",
 };
 
 export default function RootLayout({
@@ -27,10 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${montserrat.variable} antialiased bg-background text-foreground`}
+        className={`${playfair.variable} ${montserrat.variable} ${lora.variable} antialiased font-body bg-cream text-dark`}
       >
-        <Navbar />
-        <main className="min-h-screen">
+        <Header />
+        <main className="min-h-screen pt-[80px]">
           {children}
         </main>
         <Footer />
